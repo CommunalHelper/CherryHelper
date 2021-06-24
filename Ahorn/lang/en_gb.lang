@@ -1,0 +1,12 @@
+# -- Entity and Trigger Tooltips -- 
+#    placements.entities.entityName.tooltips.attr=Tooltip
+#    placements.triggers.triggerName.tooltips.attr=Tooltip
+
+# -- Entities -- 
+# Custom Teleport Mirror
+placements.entities.CherryHelper/FallTeleport.tooltips.toLevel=What room within the chapter you want to be taken to. (NOTE: Doesn't work with Load Another Bin or End Level)
+placements.entities.CherryHelper/FallTeleport.tooltips.EndLevel=If checked, will boot you back to the chapter select and mark level as complete. If used with Load Another Bin, it will mark the chapter as completed, before teleporting you to the specified chapter.
+placements.entities.CherryHelper/FallTeleport.tooltips.LoadAnotherBin=If checked, will take you to the chapter in SID Of Map. (NOTE: Works with End Level, ignores To Level)
+placements.entities.CherryHelper/FallTeleport.tooltips.SIDOfMap=If LoadAnotherBin is checked, which chapter do you want to be taken to? (NOTE: This is NOT the path to the .bin file. To get the SID, enter the Debug Console in the map you want to go to. It's SID will appear in the top-left corner.)
+placements.entities.CherryHelper/FallTeleport.tooltips.CustomSpritePath=Path to a custom frame sprite from Graphics/Atlases/Gameplay/objects/ (NOTE: Doesn't support mirrors of different sizes, please stick to vanilla mirror size). Leave empty for standard mirror sprite.
+ 

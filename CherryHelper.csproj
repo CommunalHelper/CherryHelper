@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC66A822-4E9E-4911-B811-6C2C35C2728B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Celeste.Mod.CherryHelper</RootNamespace>
+    <AssemblyName>CherryHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Code\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>DLL\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Celeste">
+      <HintPath>lib-stripped\Celeste.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FNA">
+      <HintPath>lib-stripped\FNA.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MMHOOK_Celeste">
+      <HintPath>lib-stripped\MMHOOK_Celeste.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>lib-stripped\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\..\MonoMod.RuntimeDetour.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\MonoMod.Utils.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YamlDotNet">
+      <HintPath>..\..\YamlDotNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Entities\AnterogradeController.cs" />
+    <Compile Include="Code\Entities\AssistRectangle.cs" />
+    <Compile Include="Code\Entities\BadelineBot.cs" />
+    <Compile Include="Code\Entities\CatEye.cs" />
+    <Compile Include="Code\Entities\ChooChooBlock.cs" />
+    <Compile Include="Code\Entities\CS_FallTeleport.cs" />
+    <Compile Include="Code\Entities\CS_FlipOut.cs" />
+    <Compile Include="Code\Entities\DoorField.cs" />
+    <Compile Include="Code\Entities\EntityToggleBell.cs" />
+    <Compile Include="Code\Entities\FallTeleportMirror.cs" />
+    <Compile Include="Code\Entities\ItemCrystal.cs" />
+    <Compile Include="Code\Entities\ItemCrystalCollider.cs" />
+    <Compile Include="Code\Entities\ItemCrystalPedestal.cs" />
+    <Compile Include="Code\Entities\LightningDashSwitch.cs" />
+    <Compile Include="Code\Entities\NightItemLocker.cs" />
+    <Compile Include="Code\Entities\NonReturnCrushBlock.cs" />
+    <Compile Include="Code\Entities\NonReturnSokoban.cs" />
+    <Compile Include="Code\Entities\RottenBerry.cs" />
+    <Compile Include="Code\Entities\ShadowBumper.cs" />
+    <Compile Include="Code\Entities\ShadowDashRefill.cs" />
+    <Compile Include="Code\Entities\UninterruptedNRCB.cs" />
+    <Compile Include="Code\Module\CherryHelper.cs" />
+    <Compile Include="Code\Module\CherryHelperSaveData.cs" />
+    <Compile Include="Code\Module\CherryHelperSession.cs" />
+    <Compile Include="Code\Triggers\AudioPlayTrigger.cs" />
+    <Compile Include="Code\Triggers\ChangePlayerStateTrigger.cs" />
+    <Compile Include="Code\Triggers\EntityToggleTrigger.cs" />
+    <Compile Include="Code\Triggers\RottenBerryCollectTrigger.cs" />
+    <Compile Include="Code\Triggers\SaveFlagTrigger.cs" />
+    <Compile Include="Code\Triggers\TimrResetTrigger.cs" />
+    <Compile Include="Code\Triggers\WindAttackRemoveTrigger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rmdir /s /q obj</PostBuildEvent>
+  </PropertyGroup>
+</Project>

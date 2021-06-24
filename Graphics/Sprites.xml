@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Sprites>
+  <NoReturnKevin_face path="objects/noReturnKevin/" start="idle">
+      <Center/>
+      <Loop id="idle" path="idle_face" delay="0.08"/>
+      <Anim id="hurt" path="hurt" frames="3-12" delay="0.08" goto="idle"/>
+      <Anim id="hit" path="hit" delay="0.08"/>
+      <Loop id="left" path="hit_left" delay="0.08"/>
+      <Loop id="right" path="hit_right" delay="0.08"/>
+      <Loop id="up" path="hit_up" delay="0.08"/>
+      <Loop id="down" path="hit_down" delay="0.08"/>
+  </NoReturnKevin_face>
+  <UNoReturnKevin_face path="objects/uninterruptedNRK/" start="idle">
+      <Center/>
+      <Loop id="idle" path="idle_face" delay="0.08"/>
+      <Anim id="hurt" path="hurt" frames="3-12" delay="0.08" goto="idle"/>
+      <Anim id="hit" path="hit" delay="0.08"/>
+      <Loop id="left" path="hit_left" delay="0.08"/>
+      <Loop id="right" path="hit_right" delay="0.08"/>
+      <Loop id="up" path="hit_up" delay="0.08"/>
+      <Loop id="down" path="hit_down" delay="0.08"/>
+  </UNoReturnKevin_face>
+  <NoReturnSokoban_face path="objects/noReturnSokoban/" start="idle">
+      <Center/>
+      <Loop id="idle" path="idle_face" delay="0.08"/>
+      <Anim id="hurt" path="hurt" frames="3-12" delay="0.08" goto="idle"/>
+      <Anim id="hit" path="hit" delay="0.08"/>
+      <Loop id="left" path="hit_left" delay="0.08"/>
+      <Loop id="right" path="hit_right" delay="0.08"/>
+      <Loop id="up" path="hit_up" delay="0.08"/>
+      <Loop id="down" path="hit_down" delay="0.08"/>
+  </NoReturnSokoban_face>
+  <NoReturnSokobanAlt_face path="objects/noReturnSokobanAlt/" start="idle">
+      <Center/>
+      <Loop id="idle" path="idle_face" delay="0.08"/>
+      <Anim id="hurt" path="hurt" frames="3-12" delay="0.08" goto="idle"/>
+      <Anim id="hit" path="hit" delay="0.08"/>
+      <Loop id="left" path="hit_left" delay="0.08"/>
+      <Loop id="right" path="hit_right" delay="0.08"/>
+      <Loop id="up" path="hit_up" delay="0.08"/>
+      <Loop id="down" path="hit_down" delay="0.08"/>
+  </NoReturnSokobanAlt_face>
+  <hat path="kidshat/" start="hat">
+    <Justify x=".5" y="1" />
+    <Loop id="hat" path="hat" delay="0.8"/>
+  </hat>
+  
+  <twineye path="danger/twodashcateye/" start="spin">
+    <Center/>
+    <Loop id="spin" path="cateye" delay="0.25" frames="0"/>
+    <Anim id="patrol" path="cateye" delay="0.08" frames="0-2,2,2,2,3-6,6,6,6-7,0"/>
+    <Anim id="break" path="cateye" delay="0.04" frames="8-13"/>
+  </twineye>
+
+  <cateye path="danger/cateye/" start="spin">
+    <Center/>
+    <Loop id="spin" path="cateye" delay="0.25" frames="0"/>
+    <Anim id="patrol" path="cateye" delay="0.08" frames="0-2,2,2,2,3-6,6,6,6-7,0"/>
+    <Anim id="break" path="cateye" delay="0.04" frames="8-13"/>
+  </cateye>
+
+  <demoneye path="danger/shadowcateye/" start="spin">
+    <Center/>
+    <Loop id="spin" path="cateye" delay="0.25" frames="0"/>
+    <Anim id="patrol" path="cateye" delay="0.08" frames="0-2,2,2,2,3-6,6,6,6-7,0"/>
+    <Anim id="break" path="cateye" delay="0.04" frames="8-13"/>
+  </demoneye>
+
+  <sdbumper path="objects/shadowBumper/" start="idle">
+      <Center/>
+      <Anim id="on" path="shadow" frames="42-44" delay="0.06" goto="idle"/>
+      <Loop id="idle" path="shadow" frames="0-33" delay="0.06"/>
+      <Anim id="hit" path="shadow" frames="34-42" delay="0.06" goto="off"/>
+      <Loop id="off" path="shadow" frames="42" delay="0.06"/>
+  </sdbumper>
+
+  <itemCrystalPedestal path="objects/itemCrystalPedestal/" start="idle">
+    <Center/>
+    <Loop id="idle" path="pedestal" delay="0.25" frames="0"/>
+  </itemCrystalPedestal>
+ 
+  <entityBell path="objects/itemToggleBell/" start="idle">
+    <Center/>
+    <Loop id="idle" path="bell" delay="0.2" frames="0"/>
+    <Anim id="ring_once_r" path="bell" delay="0.05" frames="0-4,3-0" goto="idle"/>
+    <Anim id="ring_once_l" path="bell" delay="0.05" frames="5-8,7-5" goto="idle"/>
+    <Anim id="ringading" path="bell" delay="0.05" frames="0-8,7,6,0-5,6,0,4*2,0,6*2" goto="idle"/>
+  </entityBell>
+
+  <rottenberry path="collectables/rottenberry/" start="idle">
+    <Center />
+    
+    <Loop id="idle" path="normal" delay=".1" frames="0-6,0-6,0-6,0-6,0-7" />
+    <Loop id="noFlash" path="normal" delay=".1" frames="0-6"/>
+    <Anim id="collect" path="normal" delay=".07" frames="7-11"/>
+    <Anim id="fade0" path="normal" delay=".08" frames="12-14,14*10,15-19"/>
+    <Anim id="fade1" path="normal" delay=".07" frames="20-22,22*10,23-26"/>
+    <Anim id="fade2" path="normal" delay=".07" frames="28-30,30*10,31-34"/>
+    <Anim id="fade3" path="normal" delay=".07" frames="36-38,38*10,39-42"/>
+    <Anim id="fade4" path="normal" delay=".07" frames="44-46,46*10,47-50"/>
+	  <Anim id="fade5" path="normal" delay=".07" frames="52,53,54,53,54,53,54,53,54,53,54,53,54-59"/>
+	  <Anim id="fade_wow" path="wow/normal" delay=".1" frames="52-66"/>
+  </rottenberry>
+  
+  <ghostrottenberry path="collectables/ghostrottenberry/" start="idle">
+    <Center />
+    <Loop id="idle" path="idle" delay=".08" frames="0-6,0-6,0-6,0-6,0-7" />
+    <Anim id="collect" path="idle" delay=".07" frames="7-11"/>
+  </ghostrottenberry>
+  <itemCrystal path="objects/itemCrystal/" start="idle">
+    <Center/>
+    <Loop id="idle" path="idle" delay="0" frames="0"/>
+    <Anim id="fill" path="destroy" delay="0.07" frames="0-9"/>
+    <Anim id="crack" path="destroy" delay="0.07" frames="10-17"/>
+  </itemCrystal>
+</Sprites>

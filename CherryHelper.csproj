@@ -49,16 +49,14 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>lib-stripped\Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\DashlessCollabHelper\lib-stripped\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="MonoMod.RuntimeDetour">
       <HintPath>..\..\MonoMod.RuntimeDetour.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MonoMod.Utils">
-      <HintPath>..\..\MonoMod.Utils.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\DashlessCollabHelper\lib-stripped\MonoMod.Utils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -77,6 +75,7 @@
     <Compile Include="Code\Entities\AnterogradeController.cs" />
     <Compile Include="Code\Entities\AssistRectangle.cs" />
     <Compile Include="Code\Entities\BadelineBot.cs" />
+    <Compile Include="Code\Entities\CassetteField.cs" />
     <Compile Include="Code\Entities\CatEye.cs" />
     <Compile Include="Code\Entities\ChooChooBlock.cs" />
     <Compile Include="Code\Entities\CS_FallTeleport.cs" />

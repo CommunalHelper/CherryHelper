@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework;
 using Celeste.Mod.Helpers;
 using System.Collections;
 using Celeste.Mod.Entities;
+using MonoMod.Utils;
 
 namespace Celeste.Mod.CherryHelper
 {
@@ -27,35 +28,34 @@ namespace Celeste.Mod.CherryHelper
         public bool assistOnSolid = true;
         public CassetteField(Vector2 position, EntityID id, float width, float height, int index, float tempo) : base(position, id, width, height, index, tempo)
         {
-            detectionCollider = new Hitbox(width,height);
+            detectionCollider = new Hitbox(Width, Height);
             Collider = null;
             Visible = false;
         }
+
         public CassetteField(EntityData data, Vector2 offset): base (data, offset)
         {
             itemsToBan = new List<string>(data.Attr("Type").Split(','));
             detectionCollider = new Hitbox(Width, Height);
             Collider = null;
             Visible = false;
+            DynData<CassetteBlock> self = new DynData<CassetteBlock>(this);
+            self.Get<LightOcclude>("occluder").RemoveSelf();
         }
         public override void Update()
         {
-            base.Update();
+
             foreach (Entity entity in trackedEntities)
             {
                 entity.Active = Activated;
                 entity.Collidable = Activated;
             }
-        }
-        public override void Render()
-        {
-            
+            base.Update();
         }
         public override void Awake(Scene scene)
         {
 
             base.Awake(scene);
-            Logger.Log("CH", scene.ToString() + scene.GetType());
             DisappearEntities(scene);
         }
 
@@ -66,7 +66,7 @@ namespace Celeste.Mod.CherryHelper
             {
                 if (entity.Collider != null)
                 {
-                    if (Collider.Bounds.Contains(entity.Collider.Bounds))
+                    if (detectionCollider.Bounds.Contains(entity.Collider.Bounds))
                     {
                         foreach (string item in itemsToBan)
                         {

@@ -4,7 +4,7 @@ module CH_NonReturnKevin
 using ..Ahorn, Maple
 
 
-@mapdef Entity "CherryHelper/NonReturnKevin" NonReturnCrushBlock(x::Integer, y::Integer, width::Integer=32, height::Integer=32, axes::String="both", chillout::Bool=false, altTexture::Bool=false)
+@mapdef Entity "CherryHelper/NonReturnKevin" NonReturnCrushBlock(x::Integer, y::Integer, width::Integer=32, height::Integer=32, axes::String="both", chillout::Bool=false, spriteDirectory::String="objects/noReturnKevin", fillColor::String="242262")
 
 
 const placements = Ahorn.PlacementDict(
@@ -12,22 +12,21 @@ const placements = Ahorn.PlacementDict(
        NonReturnCrushBlock,
         "rectangle",
         Dict{String, Any}(
-            "altTexture" => false
+            "spriteDirectory" => "objects/crushblock",
+            "fillColor" => "62222b"
         )
     ),
     "Non-Return Kevin (Resprite) (Cherry Helper)" => Ahorn.EntityPlacement(
        NonReturnCrushBlock,
         "rectangle",
         Dict{String, Any}(
-            "altTexture" => true
+            "spriteDirectory" => "objects/noReturnKevin",
+            "fillColor" => "242262"
         )
     ),
 )
 
 
-
-const kevinColor = (98, 34, 43) ./ 255
-const altKevinColor = (36, 34, 98) ./ 255
 Ahorn.editingOptions(entity::NonReturnCrushBlock) = Dict{String, Any}(
     "axes" => Maple.kevin_axes
 )
@@ -39,7 +38,16 @@ Ahorn.selection(entity::NonReturnCrushBlock) = Ahorn.getEntityRectangle(entity)
 
 # Todo - Use randomness to decide on Kevin border
 function Ahorn.render(ctx::Ahorn.Cairo.CairoContext, entity::NonReturnCrushBlock, room::Maple.Room)
-    restrainedTex = (get(entity.data, "altTexture", false) ? "objects/noReturnKevin" : "objects/crushblock")
+    # Backwards compatibility for alt texture toggle
+    if (get(entity.data, "altTexture", true))
+        restrainedTex = get(entity.data, "spriteDirectory", "objects/noReturnKevin")
+        fillColor = get(entity.data, "fillColor", "242262")
+    else
+        restrainedTex = "objects/crushblock"
+        fillColor = "62222b"
+    end
+
+    kevinColor = Ahorn.argb32ToRGBATuple(parse(Int, fillColor, base=16))[1:3] ./ 255
 
     frameImage = Dict{String, String}(
         "none" => string(restrainedTex, "/block00"),
@@ -66,7 +74,7 @@ function Ahorn.render(ctx::Ahorn.Cairo.CairoContext, entity::NonReturnCrushBlock
     tilesWidth = div(width, 8)
     tilesHeight = div(height, 8)
 
-    Ahorn.drawRectangle(ctx, 2, 2, width - 4, height - 4, (get(entity.data, "altTexture", false) ?  altKevinColor : kevinColor))
+    Ahorn.drawRectangle(ctx, 2, 2, width - 4, height - 4, kevinColor)
     Ahorn.drawImage(ctx, faceSprite, div(width - faceSprite.width, 2), div(height - faceSprite.height, 2))
 
     for i in 2:tilesWidth - 1

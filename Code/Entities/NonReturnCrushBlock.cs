@@ -61,6 +61,7 @@ namespace Celeste.Mod.CherryHelper
                     break;
             }
             Add(face = new Sprite(GFX.Game, spriteDirectory + "/"));
+            face.Position = new Vector2(Width, Height) / 2f;
             if (giant)
             {
                 /*

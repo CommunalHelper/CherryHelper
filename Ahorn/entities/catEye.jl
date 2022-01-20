@@ -10,7 +10,7 @@ states=String[
 const placements = Ahorn.PlacementDict(
     "Cat Eye ($(replace(state,"_"=>" ")), Cherry Helper)" => Ahorn.EntityPlacement(
         CatEye,
-        "rectangle",
+        "point",
         Dict{String, Any}(
             "state" => state
         )

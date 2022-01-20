@@ -7,7 +7,7 @@ using ..Ahorn, Maple
 const placements = Ahorn.PlacementDict(
     "Item Crystal Pedestal (Cherry Helper)" => Ahorn.EntityPlacement(
         ItemCrystalPedestal,
-        "rectangle"
+        "point"
     )
 )
 

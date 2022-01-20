@@ -19,7 +19,7 @@ textures = String[
 const placements = Ahorn.PlacementDict(
     "Lightning Dash Switch ($(uppercasefirst(side))) (Cherry Helper)" => Ahorn.EntityPlacement(
         LDashSwitch,
-        "rectangle",
+        "point",
         Dict{String, Any}(
             "side" => side
         )

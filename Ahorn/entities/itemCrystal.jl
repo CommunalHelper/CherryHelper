@@ -28,7 +28,7 @@ items=String[
 const placements = Ahorn.PlacementDict(
     "Item Crystal ($(replace(item,"_"=>" "))) (Cherry Helper)" => Ahorn.EntityPlacement(
         ItemCrystal,
-        "rectangle",
+        "point",
         Dict{String, Any}(
             "item" => item
         )

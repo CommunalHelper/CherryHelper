@@ -30,3 +30,8 @@ entities.CherryHelper/ItemCrystal.placements.name.Red_Booster=Item Crystal (Red 
 entities.CherryHelper/ItemCrystal.placements.name.Core_Toggle=Item Crystal (Core Toggle) [CherryHelper]
 entities.CherryHelper/ItemCrystal.placements.name.Feather=Item Crystal (Feather) [CherryHelper]
 entities.CherryHelper/ItemCrystal.placements.name.Theo_Crystal=Item Crystal (Theo Crystal) [CherryHelper]
+
+entities.CherryHelper/RottenBerry.placements.name.rottenBerry=Rotten Berry [CherryHelper]
+
+entities.CherryHelper/EntityToggleBell.placements.name.bell=Entity Toggle Bell [CherryHelper]
+entities.CherryHelper/NightItemLockfield.placements.name.normal=Entity Toggle Field [CherryHelper]

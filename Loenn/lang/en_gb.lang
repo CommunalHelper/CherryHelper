@@ -1,4 +1,12 @@
 entities.CherryHelper/ShadowDashRefill.placements.name.shadowDashRefill=Shadow Dash Refill [CherryHelper]
+
 entities.CherryHelper/CatEye.placements.name.Normal=Cat Eye (Normal) [CherryHelper]
 entities.CherryHelper/CatEye.placements.name.Double_Dash=Cat Eye (Double Dash) [CherryHelper]
 entities.CherryHelper/CatEye.placements.name.Shadow_Dash=Cat Eye (Shadow Dash) [CherryHelper]
+
+entities.CherryHelper/NonReturnKevin.placements.name.both=Non Return Kevin (Both) [CherryHelper]
+entities.CherryHelper/NonReturnKevin.placements.name.vertical=Non Return Kevin (Vertical) [CherryHelper]
+entities.CherryHelper/NonReturnKevin.placements.name.horizontal=Non Return Kevin (Horizontal) [CherryHelper]
+entities.CherryHelper/NonReturnKevin.placements.name.altboth=Non Return Kevin (Alt Texture) (Both) [CherryHelper]
+entities.CherryHelper/NonReturnKevin.placements.name.altvertical=Non Return Kevin (Alt Texture) (Vertical) [CherryHelper]
+entities.CherryHelper/NonReturnKevin.placements.name.althorizontal=Non Return Kevin (Alt Texture) (Horizontal) [CherryHelper]

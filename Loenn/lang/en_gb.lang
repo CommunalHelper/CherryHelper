@@ -41,3 +41,12 @@ entities.CherryHelper/FallTeleport.placements.name.endLevel=Custom Teleport Mirr
 entities.CherryHelper/FallTeleport.placements.name.chapterChange=Custom Teleport Mirror (Chapter Change) [CherryHelper]
 
 entities.CherryHelper/AnterogradeController.placements.name.normal=Time Limit Controller [CherryHelper]
+
+entities.CherryHelper/AssistRect.placements.name.assRect=Outline Indicator [CherryHelper]
+
+entities.CherryHelper/BadelineBot.placements.name.badelineBot=Hostile Player Playback [CherryHelper]
+
+entities.CherryHelper/CassetteField.placements.name.Blue=Cassette Field (Blue) [CherryHelper]
+entities.CherryHelper/CassetteField.placements.name.Rose=Cassette Field (Rose) [CherryHelper]
+entities.CherryHelper/CassetteField.placements.name.Bright_Sun=Cassette Field (Bright Sun) [CherryHelper]
+entities.CherryHelper/CassetteField.placements.name.Malachite=Cassette Field (Malachite) [CherryHelper]

@@ -50,3 +50,7 @@ entities.CherryHelper/CassetteField.placements.name.Blue=Cassette Field (Blue) [
 entities.CherryHelper/CassetteField.placements.name.Rose=Cassette Field (Rose) [CherryHelper]
 entities.CherryHelper/CassetteField.placements.name.Bright_Sun=Cassette Field (Bright Sun) [CherryHelper]
 entities.CherryHelper/CassetteField.placements.name.Malachite=Cassette Field (Malachite) [CherryHelper]
+
+entities.CherryHelper/DoorField.placements.name.roomTeleport=Door Field (Room Teleport) [CherryHelper]
+entities.CherryHelper/DoorField.placements.name.endLevel=Door Field (End Level) [CherryHelper]
+entities.CherryHelper/DoorField.placements.name.chapterChange=Door Field (Chapter Change) [CherryHelper]

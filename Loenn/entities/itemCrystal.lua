@@ -1,4 +1,4 @@
-local rectangle = require("utils.utils")
+local utils = require("utils")
 
 local itemCrystal = {}
 

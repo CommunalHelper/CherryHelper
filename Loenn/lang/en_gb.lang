@@ -36,6 +36,8 @@ entities.CherryHelper/RottenBerry.placements.name.rottenBerry=Rotten Berry [Cher
 entities.CherryHelper/EntityToggleBell.placements.name.bell=Entity Toggle Bell [CherryHelper]
 entities.CherryHelper/NightItemLockfield.placements.name.normal=Entity Toggle Field [CherryHelper]
 
-entities.CherryHelper/FallTeleport.placements.name.roomTeleport=Custom Teleport Mirror (Room Teleport) [Cherry Helper]
-entities.CherryHelper/FallTeleport.placements.name.endLevel=Custom Teleport Mirror (End Level) [Cherry Helper]
-entities.CherryHelper/FallTeleport.placements.name.chapterChange=Custom Teleport Mirror (Chapter Change) [Cherry Helper]
+entities.CherryHelper/FallTeleport.placements.name.roomTeleport=Custom Teleport Mirror (Room Teleport) [CherryHelper]
+entities.CherryHelper/FallTeleport.placements.name.endLevel=Custom Teleport Mirror (End Level) [CherryHelper]
+entities.CherryHelper/FallTeleport.placements.name.chapterChange=Custom Teleport Mirror (Chapter Change) [CherryHelper]
+
+entities.CherryHelper/AnterogradeController.placements.name.normal=Time Limit Controller [CherryHelper]

@@ -54,3 +54,19 @@ entities.CherryHelper/CassetteField.placements.name.Malachite=Cassette Field (Ma
 entities.CherryHelper/DoorField.placements.name.roomTeleport=Door Field (Room Teleport) [CherryHelper]
 entities.CherryHelper/DoorField.placements.name.endLevel=Door Field (End Level) [CherryHelper]
 entities.CherryHelper/DoorField.placements.name.chapterChange=Door Field (Chapter Change) [CherryHelper]
+
+entities.CherryHelper/LightningDashSwitch.placements.name.up=Lightning Dash Switch (Up) [CherryHelper]
+entities.CherryHelper/LightningDashSwitch.placements.name.down=Lightning Dash Switch (Down) [CherryHelper]
+entities.CherryHelper/LightningDashSwitch.placements.name.left=Lightning Dash Switch (Left) [CherryHelper]
+entities.CherryHelper/LightningDashSwitch.placements.name.right=Lightning Dash Switch (Right) [CherryHelper]
+
+entities.CherryHelper/NonReturnSokoban.placements.name.both=Non Return Sokoban (Both) [CherryHelper]
+entities.CherryHelper/NonReturnSokoban.placements.name.vertical=Non Return Sokoban (Vertical) [CherryHelper]
+entities.CherryHelper/NonReturnSokoban.placements.name.horizontal=Non Return Sokoban (Horizontal) [CherryHelper]
+entities.CherryHelper/NonReturnSokoban.placements.name.altboth=Non Return Sokoban (Both) (Alt Texture) [CherryHelper]
+entities.CherryHelper/NonReturnSokoban.placements.name.altvertical=Non Return Sokoban (Vertical) (Alt Texture) [CherryHelper]
+entities.CherryHelper/NonReturnSokoban.placements.name.althorizontal=Non Return Sokoban (Horizontal) (Alt Texture) [CherryHelper]
+
+entities.CherryHelper/ShadowBumper.placements.name.shadowBumper=Shadow Bumper [CherryHelper]
+
+triggers.CherryHelper/AudioPlayTrigger.placements.name.trigger=Audio Play Trigger [CherryHelper]

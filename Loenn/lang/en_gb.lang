@@ -1,72 +1,86 @@
-entities.CherryHelper/ShadowDashRefill.placements.name.shadowDashRefill=Shadow Dash Refill [CherryHelper]
+mods.CherryHelper.name=Cherry Helper
 
-entities.CherryHelper/CatEye.placements.name.Normal=Cat Eye (Normal) [CherryHelper]
-entities.CherryHelper/CatEye.placements.name.Double_Dash=Cat Eye (Double Dash) [CherryHelper]
-entities.CherryHelper/CatEye.placements.name.Shadow_Dash=Cat Eye (Shadow Dash) [CherryHelper]
+entities.CherryHelper/ShadowDashRefill.placements.name.shadowDashRefill=Shadow Dash Refill
 
-entities.CherryHelper/NonReturnKevin.placements.name.both=Non Return Kevin (Both) [CherryHelper]
-entities.CherryHelper/NonReturnKevin.placements.name.vertical=Non Return Kevin (Vertical) [CherryHelper]
-entities.CherryHelper/NonReturnKevin.placements.name.horizontal=Non Return Kevin (Horizontal) [CherryHelper]
-entities.CherryHelper/NonReturnKevin.placements.name.altboth=Non Return Kevin (Alt Texture) (Both) [CherryHelper]
-entities.CherryHelper/NonReturnKevin.placements.name.altvertical=Non Return Kevin (Alt Texture) (Vertical) [CherryHelper]
-entities.CherryHelper/NonReturnKevin.placements.name.althorizontal=Non Return Kevin (Alt Texture) (Horizontal) [CherryHelper]
+entities.CherryHelper/CatEye.placements.name.Normal=Cat Eye (Normal) 
+entities.CherryHelper/CatEye.placements.name.Double_Dash=Cat Eye (Double Dash)
+entities.CherryHelper/CatEye.placements.name.Shadow_Dash=Cat Eye (Shadow Dash)
 
-entities.CherryHelper/ItemCrystalPedestal.placements.name.pedestal=Item Crystal Pedestal [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Refill=Item Crystal (Refill) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Touch_Switch=Item Crystal (Touch Switch) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Two_Refill=Item Crystal (Two Refill) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Jellyfish=Item Crystal (Jellyfish) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Fireball=Item Crystal (Fireball) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Shadow_Dash_Refill=Item Crystal (Shadow Dash Refill) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Summit_Confetti=Item Crystal (Summit Confetti) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Seeker=Item Crystal (Seeker) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Crystal_Heart=Item Crystal (Crystal Heart) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Unlockable_Character=Item Crystal (Unlockable Character) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Badeline_Chaser=Item Crystal (Badeline Chaser) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Cloud=Item Crystal (Cloud) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Frail_Cloud=Item Crystal (Frail Cloud) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Green_Booster=Item Crystal (Green Booster) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Red_Booster=Item Crystal (Red Booster) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Core_Toggle=Item Crystal (Core Toggle) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Feather=Item Crystal (Feather) [CherryHelper]
-entities.CherryHelper/ItemCrystal.placements.name.Theo_Crystal=Item Crystal (Theo Crystal) [CherryHelper]
+entities.CherryHelper/NonReturnKevin.placements.name.both=Non Return Kevin (Both)
+entities.CherryHelper/NonReturnKevin.placements.name.vertical=Non Return Kevin (Vertical)
+entities.CherryHelper/NonReturnKevin.placements.name.horizontal=Non Return Kevin (Horizontal)
+entities.CherryHelper/NonReturnKevin.placements.name.altboth=Non Return Kevin (Alt Texture) (Both)
+entities.CherryHelper/NonReturnKevin.placements.name.altvertical=Non Return Kevin (Alt Texture) (Vertical)
+entities.CherryHelper/NonReturnKevin.placements.name.althorizontal=Non Return Kevin (Alt Texture) (Horizontal)
 
-entities.CherryHelper/RottenBerry.placements.name.rottenBerry=Rotten Berry [CherryHelper]
+entities.CherryHelper/ItemCrystalPedestal.placements.name.pedestal=Item Crystal Pedestal
+entities.CherryHelper/ItemCrystal.placements.name.Refill=Item Crystal (Refill)
+entities.CherryHelper/ItemCrystal.placements.name.Touch_Switch=Item Crystal (Touch Switch)
+entities.CherryHelper/ItemCrystal.placements.name.Two_Refill=Item Crystal (Two Refill)
+entities.CherryHelper/ItemCrystal.placements.name.Jellyfish=Item Crystal (Jellyfish)
+entities.CherryHelper/ItemCrystal.placements.name.Fireball=Item Crystal (Fireball)
+entities.CherryHelper/ItemCrystal.placements.name.Shadow_Dash_Refill=Item Crystal (Shadow Dash Refill)
+entities.CherryHelper/ItemCrystal.placements.name.Summit_Confetti=Item Crystal (Summit Confetti)
+entities.CherryHelper/ItemCrystal.placements.name.Seeker=Item Crystal (Seeker)
+entities.CherryHelper/ItemCrystal.placements.name.Crystal_Heart=Item Crystal (Crystal Heart)
+entities.CherryHelper/ItemCrystal.placements.name.Unlockable_Character=Item Crystal (Unlockable Character)
+entities.CherryHelper/ItemCrystal.placements.name.Badeline_Chaser=Item Crystal (Badeline Chaser)
+entities.CherryHelper/ItemCrystal.placements.name.Cloud=Item Crystal (Cloud)
+entities.CherryHelper/ItemCrystal.placements.name.Frail_Cloud=Item Crystal (Frail Cloud)
+entities.CherryHelper/ItemCrystal.placements.name.Green_Booster=Item Crystal (Green Booster)
+entities.CherryHelper/ItemCrystal.placements.name.Red_Booster=Item Crystal (Red Booster)
+entities.CherryHelper/ItemCrystal.placements.name.Core_Toggle=Item Crystal (Core Toggle)
+entities.CherryHelper/ItemCrystal.placements.name.Feather=Item Crystal (Feather)
+entities.CherryHelper/ItemCrystal.placements.name.Theo_Crystal=Item Crystal (Theo Crystal)
 
-entities.CherryHelper/EntityToggleBell.placements.name.bell=Entity Toggle Bell [CherryHelper]
-entities.CherryHelper/NightItemLockfield.placements.name.normal=Entity Toggle Field [CherryHelper]
+entities.CherryHelper/RottenBerry.placements.name.rottenBerry=Rotten Berry
 
-entities.CherryHelper/FallTeleport.placements.name.roomTeleport=Custom Teleport Mirror (Room Teleport) [CherryHelper]
-entities.CherryHelper/FallTeleport.placements.name.endLevel=Custom Teleport Mirror (End Level) [CherryHelper]
-entities.CherryHelper/FallTeleport.placements.name.chapterChange=Custom Teleport Mirror (Chapter Change) [CherryHelper]
+entities.CherryHelper/EntityToggleBell.placements.name.bell=Entity Toggle Bell
+entities.CherryHelper/NightItemLockfield.placements.name.normal=Entity Toggle Field
 
-entities.CherryHelper/AnterogradeController.placements.name.normal=Time Limit Controller [CherryHelper]
+entities.CherryHelper/FallTeleport.placements.name.roomTeleport=Custom Teleport Mirror (Room Teleport)
+entities.CherryHelper/FallTeleport.placements.name.endLevel=Custom Teleport Mirror (End Level)
+entities.CherryHelper/FallTeleport.placements.name.chapterChange=Custom Teleport Mirror (Chapter Change)
 
-entities.CherryHelper/AssistRect.placements.name.assRect=Outline Indicator [CherryHelper]
+entities.CherryHelper/AnterogradeController.placements.name.normal=Time Limit Controller
 
-entities.CherryHelper/BadelineBot.placements.name.badelineBot=Hostile Player Playback [CherryHelper]
+entities.CherryHelper/AssistRect.placements.name.assRect=Outline Indicator
 
-entities.CherryHelper/CassetteField.placements.name.Blue=Cassette Field (Blue) [CherryHelper]
-entities.CherryHelper/CassetteField.placements.name.Rose=Cassette Field (Rose) [CherryHelper]
-entities.CherryHelper/CassetteField.placements.name.Bright_Sun=Cassette Field (Bright Sun) [CherryHelper]
-entities.CherryHelper/CassetteField.placements.name.Malachite=Cassette Field (Malachite) [CherryHelper]
+entities.CherryHelper/BadelineBot.placements.name.badelineBot=Hostile Player Playback
 
-entities.CherryHelper/DoorField.placements.name.roomTeleport=Door Field (Room Teleport) [CherryHelper]
-entities.CherryHelper/DoorField.placements.name.endLevel=Door Field (End Level) [CherryHelper]
-entities.CherryHelper/DoorField.placements.name.chapterChange=Door Field (Chapter Change) [CherryHelper]
+entities.CherryHelper/CassetteField.placements.name.Blue=Cassette Field (Blue)
+entities.CherryHelper/CassetteField.placements.name.Rose=Cassette Field (Rose)
+entities.CherryHelper/CassetteField.placements.name.Bright_Sun=Cassette Field (Bright Sun)
+entities.CherryHelper/CassetteField.placements.name.Malachite=Cassette Field (Malachite)
 
-entities.CherryHelper/LightningDashSwitch.placements.name.up=Lightning Dash Switch (Up) [CherryHelper]
-entities.CherryHelper/LightningDashSwitch.placements.name.down=Lightning Dash Switch (Down) [CherryHelper]
-entities.CherryHelper/LightningDashSwitch.placements.name.left=Lightning Dash Switch (Left) [CherryHelper]
-entities.CherryHelper/LightningDashSwitch.placements.name.right=Lightning Dash Switch (Right) [CherryHelper]
+entities.CherryHelper/DoorField.placements.name.roomTeleport=Door Field (Room Teleport)
+entities.CherryHelper/DoorField.placements.name.endLevel=Door Field (End Level)
+entities.CherryHelper/DoorField.placements.name.chapterChange=Door Field (Chapter Change)
 
-entities.CherryHelper/NonReturnSokoban.placements.name.both=Non Return Sokoban (Both) [CherryHelper]
-entities.CherryHelper/NonReturnSokoban.placements.name.vertical=Non Return Sokoban (Vertical) [CherryHelper]
-entities.CherryHelper/NonReturnSokoban.placements.name.horizontal=Non Return Sokoban (Horizontal) [CherryHelper]
-entities.CherryHelper/NonReturnSokoban.placements.name.altboth=Non Return Sokoban (Both) (Alt Texture) [CherryHelper]
-entities.CherryHelper/NonReturnSokoban.placements.name.altvertical=Non Return Sokoban (Vertical) (Alt Texture) [CherryHelper]
-entities.CherryHelper/NonReturnSokoban.placements.name.althorizontal=Non Return Sokoban (Horizontal) (Alt Texture) [CherryHelper]
+entities.CherryHelper/LightningDashSwitch.placements.name.up=Lightning Dash Switch (Up)
+entities.CherryHelper/LightningDashSwitch.placements.name.down=Lightning Dash Switch (Down)
+entities.CherryHelper/LightningDashSwitch.placements.name.left=Lightning Dash Switch (Left)
+entities.CherryHelper/LightningDashSwitch.placements.name.right=Lightning Dash Switch (Right)
 
-entities.CherryHelper/ShadowBumper.placements.name.shadowBumper=Shadow Bumper [CherryHelper]
+entities.CherryHelper/NonReturnSokoban.placements.name.both=Non Return Sokoban (Both)
+entities.CherryHelper/NonReturnSokoban.placements.name.vertical=Non Return Sokoban (Vertical)
+entities.CherryHelper/NonReturnSokoban.placements.name.horizontal=Non Return Sokoban (Horizontal)
+entities.CherryHelper/NonReturnSokoban.placements.name.altboth=Non Return Sokoban (Both) (Alt Texture)
+entities.CherryHelper/NonReturnSokoban.placements.name.altvertical=Non Return Sokoban (Vertical) (Alt Texture)
+entities.CherryHelper/NonReturnSokoban.placements.name.althorizontal=Non Return Sokoban (Horizontal) (Alt Texture)
 
-triggers.CherryHelper/AudioPlayTrigger.placements.name.trigger=Audio Play Trigger [CherryHelper]
+entities.CherryHelper/ShadowBumper.placements.name.shadowBumper=Shadow Bumper
+
+triggers.CherryHelper/AudioPlayTrigger.placements.name.trigger=Audio Play Trigger
+
+triggers.CherryHelper/RottenBerryCollectTrigger.placements.name.trigger=Rotten Berry Collect Trigger
+
+triggers.CherryHelper/SaveFlagTrigger.placements.name.trigger=Save Data Flag Trigger
+
+triggers.CherryHelper/SnowballStop.placements.name.trigger=Snowball Stop Trigger
+
+triggers.CherryHelper/NightTimeTrigger.placements.name.trigger=Item Toggle Trigger
+
+triggers.CherryHelper/PlayerStateChange.placements.name.trigger=Change Player State Trigger
+
+triggers.CherryHelper/TimerTrigger.placements.name.trigger=Timer Trigger

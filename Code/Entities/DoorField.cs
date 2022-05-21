@@ -12,6 +12,7 @@ namespace Celeste.Mod.CherryHelper
     {
         public string toLevel;
         private bool EndLevel;
+        private Vector2 spawnOffset;
 
         public string NextChapterSSID = "";
         private bool SeamlessNextChapter;
@@ -35,6 +36,7 @@ namespace Celeste.Mod.CherryHelper
             EndLevel = data.Bool("EndLevel", false);
             NextChapterSSID = data.Attr("SIDOfMap");
             SeamlessNextChapter = data.Bool("LoadAnotherBin", true);
+            spawnOffset = new Vector2(data.Int("spawnOffsetX", 0), data.Int("spawnOffsetY", 0));
             switch (data.Attr("Side"))
             {
                 case "A":
@@ -94,7 +96,7 @@ namespace Celeste.Mod.CherryHelper
                     level.UnloadLevel();
                     level.Session.Keys.Clear();
                     level.Session.Level = toLevel;
-                    level.Session.RespawnPoint = level.GetSpawnPoint(new Vector2(level.Bounds.Left, level.Bounds.Top));
+                    level.Session.RespawnPoint = level.GetSpawnPoint(spawnOffset + new Vector2(level.Bounds.Left, level.Bounds.Top));
                     level.LoadLevel(Player.IntroTypes.None);
                     Audio.SetMusicParam("fade", 1f);
                     Leader.RestoreStrawberries(level.Tracker.GetEntity<Player>().Leader);

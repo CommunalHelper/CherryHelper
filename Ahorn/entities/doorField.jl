@@ -5,7 +5,7 @@ sides=String[
     "A",
     "B",
     "C"]
-@mapdef Entity "CherryHelper/DoorField" DoorField(x::Integer, y::Integer, width::Integer=8, height::Integer=8,  toLevel::String="",EndLevel::Bool=false, SIDOfMap::String="", LoadAnotherBin::Bool=false, Side::String="A")
+@mapdef Entity "CherryHelper/DoorField" DoorField(x::Integer, y::Integer, width::Integer=8, height::Integer=8,  toLevel::String="",EndLevel::Bool=false, SIDOfMap::String="", LoadAnotherBin::Bool=false, Side::String="A", spawnOffsetX::Integer=0, spawnOffsetY::Integer=0)
 
 const placements = Ahorn.PlacementDict(
     "Door Field (Room Teleport) (Cherry Helper)" => Ahorn.EntityPlacement(

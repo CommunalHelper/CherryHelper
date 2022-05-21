@@ -75,7 +75,6 @@
     <Compile Include="Code\Entities\AnterogradeController.cs" />
     <Compile Include="Code\Entities\AssistRectangle.cs" />
     <Compile Include="Code\Entities\BadelineBot.cs" />
-    <Compile Include="Code\Entities\CassetteField.cs" />
     <Compile Include="Code\Entities\CatEye.cs" />
     <Compile Include="Code\Entities\ChooChooBlock.cs" />
     <Compile Include="Code\Entities\CS_FallTeleport.cs" />

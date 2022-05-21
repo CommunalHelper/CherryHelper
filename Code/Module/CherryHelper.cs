@@ -26,7 +26,6 @@ namespace Celeste.Mod.CherryHelper
         public static CherryHelperSaveData SaveData => (CherryHelperSaveData)Instance._SaveData;
 
         public Sprite TemporalSea_TestHatthew;
-        private Coroutine shadowEndDelayCoroutine;
 
 
         public override void LoadContent(bool firstLoad)
@@ -64,54 +63,6 @@ namespace Celeste.Mod.CherryHelper
             ShadowDashRefill.Load(); // load the Shadow Dash mechanic
             On.Celeste.Session.ctor += handleSavedFlags;
             On.Celeste.Session.Restart += handleSF2;
-            On.Monocle.Entity.Render += cassetteRenderAll;
-        }
-
-        private void cassetteRenderAll(On.Monocle.Entity.orig_Render orig, Entity self)
-        {
-            if (!(self.Scene is Level)) {
-                orig(self);
-                return;
-            };
-            bool noRenderChange = true;
-            foreach (CassetteField field in self.SceneAs<Level>().Tracker.GetEntities<CassetteField>())
-            {
-                if (field.trackedEntities.Contains(self)){
-                    noRenderChange = false;
-                    string cGrade="";
-                    switch (field.Index)
-                    {
-                        case (0):
-                            cGrade = "CassetteColorgrades/blue";
-                            break;
-                        case (1):
-                            cGrade = "CassetteColorgrades/pink";
-                            break;
-                        case (2):
-                            cGrade = "CassetteColorgrades/yellow";
-                            break;
-                        case (3):
-                            cGrade = "CassetteColorgrades/green";
-                            break;
-                    }
-                    if (!field.Activated) {
-                        cGrade += "dark";
-                    };
-                    Effect fxColorGrading = GFX.FxColorGrading;
-                    fxColorGrading.CurrentTechnique = fxColorGrading.Techniques["ColorGradeSingle"];
-                    Engine.Graphics.GraphicsDevice.Textures[1] = GFX.ColorGrades[cGrade].Texture.Texture_Safe;
-                    Draw.SpriteBatch.End();
-                    Draw.SpriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointWrap, DepthStencilState.None, RasterizerState.CullNone, fxColorGrading, (self.Scene as Level).GameplayRenderer.Camera.Matrix);
-                    orig(self);
-                    Draw.SpriteBatch.End();
-                    Draw.SpriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointWrap, DepthStencilState.None, RasterizerState.CullNone, null, (self.Scene as Level).GameplayRenderer.Camera.Matrix);
-
-                }
-            }
-            if (noRenderChange)
-            {
-                orig(self);
-            }
         }
 
         private Session handleSF2(On.Celeste.Session.orig_Restart orig, Session self, string intoLevel)

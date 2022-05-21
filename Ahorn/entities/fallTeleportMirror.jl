@@ -9,7 +9,7 @@ sides=String[
 const placements = Ahorn.PlacementDict(
     "Custom Teleport Mirror (Room Teleport) (Cherry Helper)" => Ahorn.EntityPlacement(
          FallTeleportMirror,
-         "rectangle",
+         "point",
          Dict{String, Any}(
             "EndLevel" => false,
             "LoadAnotherBin" => false
@@ -17,7 +17,7 @@ const placements = Ahorn.PlacementDict(
     ),
     "Custom Teleport Mirror (End Level) (Cherry Helper)" => Ahorn.EntityPlacement(
          FallTeleportMirror,
-         "rectangle",
+         "point",
          Dict{String, Any}(
             "EndLevel" => true,
             "LoadAnotherBin" => false
@@ -25,7 +25,7 @@ const placements = Ahorn.PlacementDict(
     ),
     "Custom Teleport Mirror (Chapter Change) (Cherry Helper)" => Ahorn.EntityPlacement(
          FallTeleportMirror,
-         "rectangle",
+         "point",
          Dict{String, Any}(
             "EndLevel" => false,
             "LoadAnotherBin" => true,

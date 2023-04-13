@@ -13,6 +13,13 @@ entities.CherryHelper/NonReturnKevin.placements.name.altboth=Non Return Kevin (A
 entities.CherryHelper/NonReturnKevin.placements.name.altvertical=Non Return Kevin (Alt Texture) (Vertical)
 entities.CherryHelper/NonReturnKevin.placements.name.althorizontal=Non Return Kevin (Alt Texture) (Horizontal)
 
+entities.CherryHelper/UI_NRCB.placements.name.both=Uninterruptible Non Return Kevin (Both)
+entities.CherryHelper/UI_NRCB.placements.name.vertical=Uninterruptible Non Return Kevin (Vertical)
+entities.CherryHelper/UI_NRCB.placements.name.horizontal=Uninterruptible Non Return Kevin (Horizontal)
+entities.CherryHelper/UI_NRCB.placements.name.altboth=Uninterruptible Non Return Kevin (Alt Texture) (Both)
+entities.CherryHelper/UI_NRCB.placements.name.altvertical=Uninterruptible Non Return Kevin (Alt Texture) (Vertical)
+entities.CherryHelper/UI_NRCB.placements.name.althorizontal=Uninterruptible Non Return Kevin (Alt Texture) (Horizontal)
+
 entities.CherryHelper/ItemCrystalPedestal.placements.name.pedestal=Item Crystal Pedestal
 entities.CherryHelper/ItemCrystal.placements.name.Refill=Item Crystal (Refill)
 entities.CherryHelper/ItemCrystal.placements.name.Touch_Switch=Item Crystal (Touch Switch)

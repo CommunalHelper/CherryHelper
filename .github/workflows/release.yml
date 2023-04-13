@@ -39,11 +39,13 @@ jobs:
     - name: Upload ZIP
       uses: actions/upload-artifact@v3
       with:
-        name: IsaGrabBag
+        name: CherryHelper
         path: |
           Ahorn
+          Audio
           Code/bin
-          Effects
+          Dialog
           Graphics
+          Loenn
           everest.yaml
           !Code/bin/Debug

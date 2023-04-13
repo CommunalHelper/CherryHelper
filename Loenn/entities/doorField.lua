@@ -26,7 +26,9 @@ doorField.placements = {
             LoadAnotherBin=false,
             Side="A",
             width=16,
-            height=16
+            height=16,
+            spawnOffsetX=0,
+            spawnOffsetY=0
         }
     },
     {
@@ -38,7 +40,9 @@ doorField.placements = {
             LoadAnotherBin=false,
             Side="A",
             width=16,
-            height=16
+            height=16,
+            spawnOffsetX=0,
+            spawnOffsetY=0
         }
     },
     {
@@ -50,7 +54,9 @@ doorField.placements = {
             LoadAnotherBin=true,
             Side="A",
             width=16,
-            height=16
+            height=16,
+            spawnOffsetX=0,
+            spawnOffsetY=0
         }
     }
 }

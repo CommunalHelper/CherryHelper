@@ -1,6 +1,10 @@
 # Cherry Helper
 
-A constantly-growing helper mod for Celeste that adds a lot of stuff! If you have a suggestion or a bug that needs fixing, either tell me via Discord (@aridai#3842) or open an issue here!
+A helper for Celeste. Originally created by aridai and now maintained by the Communal Helper organization. 
+
+The release build can be downloaded [here](https://gamebanana.com/mods/53756).
+
+Head to our [issues page](https://github.com/CommunalHelper/CherryHelper/issues) to leave a bug report or feature request.
 
 ## Mechanics
 

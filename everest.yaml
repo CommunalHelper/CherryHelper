@@ -1,6 +1,6 @@
 - Name: CherryHelper
   Version: 1.6.11
-  DLL: DLL/CherryHelper.dll
+  DLL: Code/bin/CherryHelper.dll
   Dependencies:
     - Name: Everest
       Version: 1.1761.0

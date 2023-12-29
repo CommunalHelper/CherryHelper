@@ -16,18 +16,27 @@ namespace Celeste.Mod.CherryHelper
             axes = data.Enum("axes", Axes.Both);
             chillOut = data.Bool("chillOut", false);
 
-            // Backwards compatibility for toggled texture
-            altTexture = data.Bool("altTexture", true);
-            if (altTexture)
-            {
+            if (data.Bool("reskinnable")) {
+                P_Crushing = new ParticleType(P_Crushing) {
+                    Color = Calc.HexToColor(data.Attr("crushParticleColor1", "ff66e2")),
+                    Color2 = Calc.HexToColor(data.Attr("crushParticleColor2", "68fcff")),
+                };
+
+                P_Activate = new ParticleType(P_Activate) {
+                    Color = Calc.HexToColor(data.Attr("activateParticleColor1", "5fcde4")),
+                    Color2 = Calc.HexToColor(data.Attr("activateParticleColor2", "ffffff")),
+                };
+
                 spriteDirectory = data.Attr("spriteDirectory", "objects/uninterruptedNRK");
                 fill = Calc.HexToColor(data.Attr("fillColor", "242262"));
-            }
-            else
-            {
+            } else if (data.Bool("altTexture", true)) {
+                spriteDirectory = data.Attr("spriteDirectory", "objects/uninterruptedNRK");
+                fill = Calc.HexToColor(data.Attr("fillColor", "242262"));
+            } else {
                 spriteDirectory = "objects/crushblock";
                 fill = Calc.HexToColor("62222b");
             }
+
 
             this.idleImages = new List<Image>();
             this.activeTopImages = new List<Image>();
@@ -467,7 +476,7 @@ namespace Celeste.Mod.CherryHelper
                 }
             }
             num += 2;
-            this.level.Particles.Emit(CrushBlock.P_Activate, num, position, positionRange, direction);
+            this.level.Particles.Emit(P_Activate, num, position, positionRange, direction);
         }
 
         private IEnumerator AttackSequence()
@@ -784,7 +793,6 @@ namespace Celeste.Mod.CherryHelper
         private const float ReturnSpeed = 30f;
         private const float ReturnAccel = 80f;
         public Color fill;
-        private bool altTexture;
         public Axes axes;
 
         private Level level;

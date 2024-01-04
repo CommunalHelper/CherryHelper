@@ -16,21 +16,14 @@
     </ItemDefinitionGroup>
 
     <ItemGroup>
-        <PackageReference Include="MonoMod.RuntimeDetour" Version="22.01.04.03" />
+        <PackageReference Include="MonoMod.RuntimeDetour" Version="25.0.2" PrivateAssets="all" ExcludeAssets="runtime" />
     </ItemGroup>
 
     <ItemGroup>
-        <Reference Include="$(CelestePrefix)\Celeste.dll">
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="$(CelestePrefix)\MMHOOK_Celeste.dll">
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="$(CelestePrefix)\FNA.dll">
-            <Private>false</Private>
-        </Reference>
+        <Reference Include="$(CelestePrefix)\Celeste.dll" />
+        <Reference Include="$(CelestePrefix)\MMHOOK_Celeste.dll" />
+        <Reference Include="$(CelestePrefix)\FNA.dll" />
     </ItemGroup>
-
 
     <Target Name="CopyFiles" AfterTargets="Build">
         <Copy SourceFiles="$(OutputPath)\$(AssemblyName).dll" DestinationFolder="bin" />

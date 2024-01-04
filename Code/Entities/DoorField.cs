@@ -28,6 +28,7 @@ namespace Celeste.Mod.CherryHelper
             Add(talkie = new TalkComponent(new Rectangle(0, 0, (int)Collider.Width, (int)Collider.Height), new Vector2(0.5f * Collider.Width, 0.5f * Collider.Height), OnEnter));
             talkie.Enabled = true;
             talkie.Visible = true;
+            talkie.PlayerMustBeFacing = false;
             base.Added(scene);
         }
         public DoorField(EntityData data, Vector2 offset) : this(data.Position + offset, data.Width, data.Height)

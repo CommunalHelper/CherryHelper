@@ -56,11 +56,6 @@ entities.CherryHelper/AssistRect.placements.name.assRect=Outline Indicator
 
 entities.CherryHelper/BadelineBot.placements.name.badelineBot=Hostile Player Playback
 
-entities.CherryHelper/CassetteField.placements.name.Blue=Cassette Field (Blue)
-entities.CherryHelper/CassetteField.placements.name.Rose=Cassette Field (Rose)
-entities.CherryHelper/CassetteField.placements.name.Bright_Sun=Cassette Field (Bright Sun)
-entities.CherryHelper/CassetteField.placements.name.Malachite=Cassette Field (Malachite)
-
 entities.CherryHelper/DoorField.placements.name.roomTeleport=Door Field (Room Teleport)
 entities.CherryHelper/DoorField.placements.name.endLevel=Door Field (End Level)
 entities.CherryHelper/DoorField.placements.name.chapterChange=Door Field (Chapter Change)

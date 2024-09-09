@@ -99,6 +99,9 @@ namespace Celeste.Mod.CherryHelper
                     level.Session.Level = toLevel;
                     level.Session.RespawnPoint = level.GetSpawnPoint(spawnOffset + new Vector2(level.Bounds.Left, level.Bounds.Top));
                     level.LoadLevel(Player.IntroTypes.None);
+                    if (level.Tracker.GetEntity<CassetteBlockManager>() is { } blockManager) {
+                        blockManager.Get<TransitionListener>()?.OnOutBegin?.Invoke();
+                    }
                     Audio.SetMusicParam("fade", 1f);
                     Leader.RestoreStrawberries(level.Tracker.GetEntity<Player>().Leader);
                     level.Camera.Y -= 8f;

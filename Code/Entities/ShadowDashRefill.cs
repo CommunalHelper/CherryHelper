@@ -212,6 +212,7 @@ namespace Celeste.Mod.CherryHelper
             if (CherryHelper.Session.HasShadowDash)
             {
                 CherryHelper.Session.ShadowDashActive = true;
+                shadowEndDelayCoroutine?.Cancel();
                 shadowEndDelayCoroutine?.RemoveSelf();
             }
             CherryHelper.Session.HasShadowDash = false;

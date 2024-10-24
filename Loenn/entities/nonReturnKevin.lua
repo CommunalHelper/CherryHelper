@@ -78,9 +78,6 @@ local nPatchOptions = {
     borderMode = "repeat"
 }
 
-local kevinColor = { 98 / 255, 34 / 255, 43 / 255 }
-local altKevinColor = { 36 / 255, 34 / 255, 98 / 255 }
-
 local function isempty(s)
     return s == nil or s == ""
 end
@@ -93,8 +90,8 @@ local function getBlockStyle(entity)
     local smallFaceTexture = entitySpriteDir .. "/idle_face"
     local giantFaceTexture = entitySpriteDir .. "/giant_block00"
     local fillColor = entity.altTexture
-        and (isempty(entity.fillColor) and altKevinColor or utils.getColor(entity.fillColor))
-        or kevinColor
+        and (isempty(entity.fillColor) and { 36 / 255, 34 / 255, 98 / 255 } or utils.getColor(entity.fillColor))
+        or { 98 / 255, 34 / 255, 43 / 255 }
 
     return {
         spriteDir = entitySpriteDir,

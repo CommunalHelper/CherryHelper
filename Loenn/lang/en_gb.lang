@@ -93,9 +93,22 @@ entities.CherryHelper/LightningDashSwitch.placements.name.right=Lightning Dash S
 entities.CherryHelper/NonReturnSokoban.placements.name.both=Non Return Sokoban (Both)
 entities.CherryHelper/NonReturnSokoban.placements.name.vertical=Non Return Sokoban (Vertical)
 entities.CherryHelper/NonReturnSokoban.placements.name.horizontal=Non Return Sokoban (Horizontal)
-entities.CherryHelper/NonReturnSokoban.placements.name.altboth=Non Return Sokoban (Both) (Alt Texture)
-entities.CherryHelper/NonReturnSokoban.placements.name.altvertical=Non Return Sokoban (Vertical) (Alt Texture)
-entities.CherryHelper/NonReturnSokoban.placements.name.althorizontal=Non Return Sokoban (Horizontal) (Alt Texture)
+entities.CherryHelper/NonReturnSokoban.placements.name.reskinnableboth=Non Return Sokoban (Both, Reskinnable)
+entities.CherryHelper/NonReturnSokoban.placements.name.reskinnablevertical=Non Return Sokoban (Vertical, Reskinnable)
+entities.CherryHelper/NonReturnSokoban.placements.name.reskinnablehorizontal=Non Return Sokoban (Horizontal, Reskinnable)
+entities.CherryHelper/NonReturnSokoban.attributes.description.axes=Determines which sides of the Kevin block are hittable.
+entities.CherryHelper/NonReturnSokoban.attributes.description.chillout=Whether the block should have the large face and get tired after being hit.
+entities.CherryHelper/NonReturnSokoban.attributes.description.altTexture=Use the alternate Kevin textures.
+entities.CherryHelper/NonReturnSokoban.attributes.description.spriteDirectory=The directory containing all the Kevin sprites. Custom sprites must be formatted in the same way as vanilla kevins.
+entities.CherryHelper/NonReturnSokoban.attributes.description.fillColor=Fill color of the Kevin.
+entities.CherryHelper/NonReturnSokoban.attributes.name.crushParticleColor1=Crush Particle Color 1
+entities.CherryHelper/NonReturnSokoban.attributes.description.crushParticleColor1=One of the 2 colors of the particles the crush block emits when it moves.
+entities.CherryHelper/NonReturnSokoban.attributes.name.crushParticleColor2=Crush Particle Color 2
+entities.CherryHelper/NonReturnSokoban.attributes.description.crushParticleColor2=One of the 2 colors of the particles the crush block emits when it moves.
+entities.CherryHelper/NonReturnSokoban.attributes.name.activateParticleColor1=Activate Particle Color 1
+entities.CherryHelper/NonReturnSokoban.attributes.description.activateParticleColor1=One of the 2 colors of the particles the crush block emits when it is hit by the player.
+entities.CherryHelper/NonReturnSokoban.attributes.name.activateParticleColor2=Activate Particle Color 2
+entities.CherryHelper/NonReturnSokoban.attributes.description.activateParticleColor2=One of the 2 colors of the particles the crush block emits when it is hit by the player.
 
 entities.CherryHelper/ShadowBumper.placements.name.shadowBumper=Shadow Bumper
 

@@ -1,6 +1,7 @@
 local drawableNPatch = require("structs.drawable_nine_patch")
 local drawableRectangle = require("structs.drawable_rectangle")
 local drawableSprite = require("structs.drawable_sprite")
+local utils = require("utils")
 
 local axisOptions = {
     Both = "both",
@@ -12,14 +13,32 @@ local nonReturnSokoban = {}
 
 nonReturnSokoban.name = "CherryHelper/NonReturnSokoban"
 nonReturnSokoban.depth = 0
-nonReturnSokoban.minimumSize = {24, 24}
+nonReturnSokoban.minimumSize = { 24, 24 }
 nonReturnSokoban.fieldInformation = {
     axes = {
         options = axisOptions,
         editable = false
+    },
+    crushParticleColor1 = {
+        fieldType = "color"
+    },
+    crushParticleColor2 = {
+        fieldType = "color"
+    },
+    activateParticleColor1 = {
+        fieldType = "color"
+    },
+    activateParticleColor2 = {
+        fieldType = "color"
+    },
+    fillColor = {
+        fieldType = "color"
     }
 }
-nonReturnSokoban.placements = {}
+
+nonReturnSokoban.ignoredFields = { "_name", "_id", "originX", "originY", "reskinnable" }
+
+nonReturnSokoban.placements = { }
 
 for _, axis in pairs(axisOptions) do
     table.insert(nonReturnSokoban.placements, {
@@ -36,29 +55,28 @@ end
 
 for _, axis in pairs(axisOptions) do
     table.insert(nonReturnSokoban.placements, {
-        name = "alt" .. axis,
+        name = "reskinnable" .. axis,
         data = {
+            reskinnable = true,
             width = 24,
             height = 24,
             axes = axis,
-            altTexture = true,
-            chillout = false
+            chillout = false,
+            spriteDirectory = "objects/noReturnSokobanAlt",
+            crushParticleColor1 = "ff66e2",
+            crushParticleColor2 = "68fcff",
+            activateParticleColor1 = "5fcde4",
+            activateParticleColor2 = "ffffff",
+            fillColor = "242262",
         }
     })
 end
 
 local frameTextures = {
-    none = "objects/noReturnSokoban/block00",
-    horizontal = "objects/noReturnSokoban/block01",
-    vertical = "objects/noReturnSokoban/block02",
-    both = "objects/noReturnSokoban/block03"
-}
-
-local altFrameTextures = {
-    none = "objects/noReturnSokobanAlt/block00",
-    horizontal = "objects/noReturnSokobanAlt/block01",
-    vertical = "objects/noReturnSokobanAlt/block02",
-    both = "objects/noReturnSokobanAlt/block03"
+    none = "/block00",
+    horizontal = "/block01",
+    vertical = "/block02",
+    both = "/block03"
 }
 
 local nPatchOptions = {
@@ -66,16 +84,28 @@ local nPatchOptions = {
     borderMode = "repeat"
 }
 
-local sokobanColor = {195 / 255, 138 / 255, 6 / 255}
-local smallFaceTexture = "objects/noReturnSokoban/idle_face"
-local giantFaceTexture = "objects/noReturnSokoban/giant_block00"
-
-local altSokobanColor = {36 / 255, 34 / 255, 98 / 255}
-local altSmallFaceTexture = "objects/noReturnSokobanAlt/idle_face"
-local altGiantFaceTexture = "objects/noReturnSokobanAlt/giant_block00"
+local smallFaceTexture = "/idle_face"
+local giantFaceTexture = "/giant_block00"
 
 function nonReturnSokoban.sprite(room, entity)
+    local spriteDirectory = entity.spriteDirectory
     local altTexture = entity.altTexture or false
+    if spriteDirectory == nil then
+        if altTexture then
+            spriteDirectory = "objects/noReturnSokobanAlt"
+        else
+            spriteDirectory = "objects/noReturnSokoban"
+        end
+    end
+
+    local fillColor = { 195 / 255, 138 / 255, 6 / 255 }
+
+    if entity.fillColor ~= nil then
+        local success, r, g, b = utils.parseHexColor(entity.fillColor)
+        fillColor = { r, g, b }
+    elseif altTexture then
+        fillColor = { 36 / 255, 34 / 255, 98 / 255 }
+    end
 
     local x, y = entity.x or 0, entity.y or 0
     local width, height = entity.width or 24, entity.height or 24
@@ -85,22 +115,13 @@ function nonReturnSokoban.sprite(room, entity)
 
     local giant = height >= 48 and width >= 48 and chillout
 
-    local faceTexture = giant and giantFaceTexture or smallFaceTexture
-    if altTexture then
-        faceTexture = giant and altGiantFaceTexture or altSmallFaceTexture
-    end
+    local faceTexture = spriteDirectory .. (giant and giantFaceTexture or smallFaceTexture)
 
-    local frameTexture = frameTextures[axes] or frameTextures["both"]
-    if altTexture then
-        frameTexture = altFrameTextures[axes] or altFrameTextures["both"]
-    end
+    local frameTexture = spriteDirectory .. frameTextures[axes]
 
     local ninePatch = drawableNPatch.fromTexture(frameTexture, nPatchOptions, x, y, width, height)
 
-    local rectangle = drawableRectangle.fromRectangle("fill", x + 2, y + 2, width - 4, height - 4, sokobanColor)
-    if altTexture then
-        rectangle = drawableRectangle.fromRectangle("fill", x + 2, y + 2, width - 4, height - 4, altSokobanColor)
-    end
+    local rectangle = drawableRectangle.fromRectangle("fill", x + 2, y + 2, width - 4, height - 4, fillColor)
 
     local faceSprite = drawableSprite.fromTexture(faceTexture, entity)
     faceSprite:addPosition(math.floor(width / 2), math.floor(height / 2))

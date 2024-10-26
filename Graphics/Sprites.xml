@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Sprites>
-  <NoReturnSokoban_face path="objects/noReturnSokoban/" start="idle">
-      <Center/>
-      <Loop id="idle" path="idle_face" delay="0.08"/>
-      <Anim id="hurt" path="hurt" frames="3-12" delay="0.08" goto="idle"/>
-      <Anim id="hit" path="hit" delay="0.08"/>
-      <Loop id="left" path="hit_left" delay="0.08"/>
-      <Loop id="right" path="hit_right" delay="0.08"/>
-      <Loop id="up" path="hit_up" delay="0.08"/>
-      <Loop id="down" path="hit_down" delay="0.08"/>
-  </NoReturnSokoban_face>
-  <NoReturnSokobanAlt_face path="objects/noReturnSokobanAlt/" start="idle">
-      <Center/>
-      <Loop id="idle" path="idle_face" delay="0.08"/>
-      <Anim id="hurt" path="hurt" frames="3-12" delay="0.08" goto="idle"/>
-      <Anim id="hit" path="hit" delay="0.08"/>
-      <Loop id="left" path="hit_left" delay="0.08"/>
-      <Loop id="right" path="hit_right" delay="0.08"/>
-      <Loop id="up" path="hit_up" delay="0.08"/>
-      <Loop id="down" path="hit_down" delay="0.08"/>
-  </NoReturnSokobanAlt_face>
   <hat path="kidshat/" start="hat">
     <Justify x=".5" y="1" />
     <Loop id="hat" path="hat" delay="0.8"/>

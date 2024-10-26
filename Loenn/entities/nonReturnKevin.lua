@@ -55,19 +55,6 @@ end
 
 for _, axis in pairs(axisOptions) do
     table.insert(nonReturnKevin.placements, {
-        name = "alt" .. axis,
-        data = {
-            width = 24,
-            height = 24,
-            axes = axis,
-            altTexture = true,
-            chillout = false
-        }
-    })
-end
-
-for _, axis in pairs(axisOptions) do
-    table.insert(nonReturnKevin.placements, {
         name = "reskinnable" .. axis,
         data = {
             reskinnable = true,

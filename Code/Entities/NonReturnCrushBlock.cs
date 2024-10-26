@@ -682,7 +682,7 @@ namespace Celeste.Mod.CherryHelper
             }, Alarm.AlarmMode.Oneshot);
             this.crushDir = Vector2.Zero;
             this.TurnOffImages();
-            this.face.Play("hurt", false, false);
+            yield return this.face.PlayRoutine("hurt", false);
             this.face.Play("idle", false, false);
             yield break;
         }

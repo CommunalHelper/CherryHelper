@@ -12,6 +12,11 @@ entities.CherryHelper/NonReturnKevin.placements.name.horizontal=Non Return Kevin
 entities.CherryHelper/NonReturnKevin.placements.name.altboth=Non Return Kevin (Alt Texture) (Both)
 entities.CherryHelper/NonReturnKevin.placements.name.altvertical=Non Return Kevin (Alt Texture) (Vertical)
 entities.CherryHelper/NonReturnKevin.placements.name.althorizontal=Non Return Kevin (Alt Texture) (Horizontal)
+entities.CherryHelper/NonReturnKevin.placements.name.reskinnableboth=Non Return Kevin (Reskinnable) (Both)
+entities.CherryHelper/NonReturnKevin.placements.name.reskinnablevertical=Non Return Kevin (Reskinnable) (Vertical)
+entities.CherryHelper/NonReturnKevin.placements.name.reskinnablehorizontal=Non Return Kevin (Reskinnable) (Horizontal)
+entities.CherryHelper/NonReturnKevin.attributes.description.spriteDirectory=Directory custom sprites will be taken from. Custom sprites must be formatted in the same way as vanilla kevins. This option does nothing if the "Alt Texture" field is unchecked.
+entities.CherryHelper/NonReturnKevin.attributes.description.fillColor=Fill color of the kevin. This option does nothing if the "Alt Texture" field is unchecked.
 
 entities.CherryHelper/UI_NRCB.placements.name.both=Uninterruptible Non Return Kevin (Both)
 entities.CherryHelper/UI_NRCB.placements.name.vertical=Uninterruptible Non Return Kevin (Vertical)

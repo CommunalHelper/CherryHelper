@@ -19,11 +19,26 @@ nonReturnKevin.fieldInformation = {
         options = axisOptions,
         editable = false
     },
+    crushParticleColor1 = {
+        fieldType = "color"
+    },
+    crushParticleColor2 = {
+        fieldType = "color"
+    },
+    activateParticleColor1 = {
+        fieldType = "color"
+    },
+    activateParticleColor2 = {
+        fieldType = "color"
+    },
     fillColor = {
-        fieldType = "color",
+        fieldType = "color"
     }
 }
-nonReturnKevin.placements = {}
+
+nonReturnKevin.ignoredFields = { "_name", "_id", "originX", "originY", "reskinnable" }
+
+nonReturnKevin.placements = { }
 
 for _, axis in pairs(axisOptions) do
     table.insert(nonReturnKevin.placements, {
@@ -55,13 +70,17 @@ for _, axis in pairs(axisOptions) do
     table.insert(nonReturnKevin.placements, {
         name = "reskinnable" .. axis,
         data = {
+            reskinnable = true,
             width = 24,
             height = 24,
             axes = axis,
-            altTexture = true,
+            chillout = false,
             spriteDirectory = "objects/noReturnKevin",
+            crushParticleColor1 = "ff66e2",
+            crushParticleColor2 = "68fcff",
+            activateParticleColor1 = "5fcde4",
+            activateParticleColor2 = "ffffff",
             fillColor = "242262",
-            chillout = false
         }
     })
 end
@@ -78,49 +97,53 @@ local nPatchOptions = {
     borderMode = "repeat"
 }
 
-local function isempty(s)
-    return s == nil or s == ""
-end
-
-local function getBlockStyle(entity)
-    local entitySpriteDir = entity.altTexture
-        and (isempty(entity.spriteDirectory) and "objects/noReturnKevin" or entity.spriteDirectory)
-        or "objects/crushblock"
-    local frameTexture = entitySpriteDir .. frameTextures[entity.axes or "both"]
-    local smallFaceTexture = entitySpriteDir .. "/idle_face"
-    local giantFaceTexture = entitySpriteDir .. "/giant_block00"
-    local fillColor = entity.altTexture
-        and (isempty(entity.fillColor) and { 36 / 255, 34 / 255, 98 / 255 } or utils.getColor(entity.fillColor))
-        or { 98 / 255, 34 / 255, 43 / 255 }
-
-    return {
-        spriteDir = entitySpriteDir,
-        frameTexture = frameTexture,
-        smallFaceTexture = smallFaceTexture,
-        giantFaceTexture = giantFaceTexture,
-        fillColor = fillColor
-    }
-end
+local smallFaceTexture = "/idle_face"
+local giantFaceTexture = "/giant_block00"
 
 function nonReturnKevin.sprite(room, entity)
-    local blockStyle = getBlockStyle(entity)
+    local spriteDirectory = entity.spriteDirectory
+    local altTexture = entity.altTexture or false
+    if spriteDirectory == nil then
+        if altTexture then
+            spriteDirectory = "objects/noReturnKevin"
+        else
+            spriteDirectory = "objects/crushblock"
+        end
+    end
+
+    local fillColor = { 98 / 255, 34 / 255, 43 / 255 }
+
+    if entity.fillColor ~= nil then
+        local success, r, g, b = utils.parseHexColor(entity.fillColor)
+        fillColor = { r, g, b }
+    elseif altTexture then
+        fillColor = { 36 / 255, 34 / 255, 98 / 255 }
+    end
 
     local x, y = entity.x or 0, entity.y or 0
     local width, height = entity.width or 24, entity.height or 24
 
+    local axes = entity.axes or "both"
     local chillout = entity.chillout
+
     local giant = height >= 48 and width >= 48 and chillout
 
-    local ninePatch = drawableNPatch.fromTexture(blockStyle.frameTexture, nPatchOptions, x, y, width, height)
-    local rectangle = drawableRectangle.fromRectangle("fill", x + 2, y + 2, width - 4, height - 4, blockStyle.fillColor)
+    local faceTexture = spriteDirectory .. (giant and giantFaceTexture or smallFaceTexture)
 
-    local faceTexture = giant and blockStyle.giantFaceTexture or blockStyle.smallFaceTexture
+    local frameTexture = spriteDirectory .. frameTextures[axes]
+
+    local ninePatch = drawableNPatch.fromTexture(frameTexture, nPatchOptions, x, y, width, height)
+
+    local rectangle = drawableRectangle.fromRectangle("fill", x + 2, y + 2, width - 4, height - 4, fillColor)
+
     local faceSprite = drawableSprite.fromTexture(faceTexture, entity)
     faceSprite:addPosition(math.floor(width / 2), math.floor(height / 2))
 
     local sprites = ninePatch:getDrawableSprite()
+
     table.insert(sprites, 1, rectangle:getDrawableSprite())
     table.insert(sprites, 2, faceSprite)
+
     return sprites
 end
 

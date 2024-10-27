@@ -474,7 +474,7 @@ namespace Celeste.Mod.CherryHelper
                 }
             }
             num += 2;
-            this.level.Particles.Emit(CrushBlock.P_Activate, num, position, positionRange, direction);
+            this.level.Particles.Emit(P_Activate, num, position, positionRange, direction);
         }
 
         private IEnumerator AttackSequence()

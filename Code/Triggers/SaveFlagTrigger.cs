@@ -39,7 +39,7 @@ namespace Celeste.Mod.CherryHelper
                 CherryHelper.Instance.SaveFlag(level.Session, Flag, level.Session.GetFlag(Flag));
                 // More of a failsafe thing than anything.
                 level.Session.SetFlag(Flag, level.Session.GetFlag(Flag));
-                Console.WriteLine("Setting state to "+ level.Session.GetFlag(Flag));
+                Logger.Log("CherryHelper/SaveFlagTrigger", $"Setting state to {level.Session.GetFlag(Flag)}");
             }
             else
             {

@@ -22,7 +22,7 @@ namespace Celeste.Mod.CherryHelper
             {
                 savedFlags.TryGetValue(key, out bool value);
                 session.SetFlag(key, value);
-                Console.WriteLine("Flag " + key + "set to state " + value);
+                Logger.Log("CherryHelper/SavedFlagsData", $"Flag {key} set to state {value}");
             }
         }
     }

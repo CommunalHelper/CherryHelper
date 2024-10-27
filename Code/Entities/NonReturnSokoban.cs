@@ -11,11 +11,33 @@ namespace Celeste.Mod.CherryHelper
     public class NonReturnSokoban : Solid
     {
 
-        public NonReturnSokoban(Vector2 position, float width, float height, Axes axes, bool chillOut = false, bool altTexture = false) : base(position, width, height, false)
-        {
-            this.altTexture = altTexture;
-            this.fill = altTexture ? Calc.HexToColor("C38A06"): Calc.HexToColor("242262");
-            altTextureString = (altTexture ? "objects/noReturnSokoban/" : "objects/noReturnSokobanAlt/");
+        private string spriteDirectory;
+        public NonReturnSokoban(EntityData data, Vector2 offset) : base(data.Position + offset, data.Width, data.Height, false) {
+            axes = data.Enum("axes", Axes.Both);
+            chillOut = data.Bool("chillOut", false);
+
+            if (data.Bool("reskinnable")) {
+                P_Crushing = new ParticleType(P_Crushing) {
+                    Color = Calc.HexToColor(data.Attr("crushParticleColor1", "ff66e2")),
+                    Color2 = Calc.HexToColor(data.Attr("crushParticleColor2", "68fcff")),
+                };
+
+                P_Activate = new ParticleType(P_Activate) {
+                    Color = Calc.HexToColor(data.Attr("activateParticleColor1", "5fcde4")),
+                    Color2 = Calc.HexToColor(data.Attr("activateParticleColor2", "ffffff")),
+                };
+
+                spriteDirectory = data.Attr("spriteDirectory", "objects/noReturnSokobanAlt");
+                fill = Calc.HexToColor(data.Attr("fillColor", "242262"));
+            } else if (data.Bool("altTexture", true)) {
+                spriteDirectory = data.Attr("spriteDirectory", "objects/noReturnSokobanAlt");
+                fill = Calc.HexToColor(data.Attr("fillColor", "242262"));
+            } else {
+                spriteDirectory = "objects/noReturnSokoban";
+                fill = Calc.HexToColor("c38a06");
+            }
+
+
             this.idleImages = new List<Image>();
             this.activeTopImages = new List<Image>();
             this.activeRightImages = new List<Image>();
@@ -23,16 +45,14 @@ namespace Celeste.Mod.CherryHelper
             this.activeBottomImages = new List<Image>();
             this.OnDashCollide = new DashCollision(this.OnDashed);
             this.returnStack = new List<NonReturnSokoban.MoveState>();
-            this.chillOut = chillOut;
             this.giant = (Width >= 48f && Height >= 48f && chillOut);
             this.canActivate = true;
             this.attackCoroutine = new Coroutine(true);
             this.attackCoroutine.RemoveOnComplete = false;
             Add(this.attackCoroutine);
-            List<MTexture> atlasSubtextures = GFX.Game.GetAtlasSubtextures(altTextureString + "block");
+            List<MTexture> atlasSubtextures = GFX.Game.GetAtlasSubtextures(spriteDirectory + "/block");
             MTexture idle;
-            switch (axes)
-            {
+            switch (axes) {
                 default:
                     idle = atlasSubtextures[3];
                     this.canMoveHorizontally = (this.canMoveVertically = true);
@@ -48,21 +68,43 @@ namespace Celeste.Mod.CherryHelper
                     this.canMoveVertically = true;
                     break;
             }
-            if (!altTexture)
-            {
-                Add(this.face = GFX.SpriteBank.Create("NoReturnSokobanAlt_face"));
+            Add(face = new Sprite(GFX.Game, spriteDirectory + "/"));
+            face.Position = new Vector2(Width, Height) / 2f;
+            if (giant) {
+                /*
+                  <Loop id="idle" path="giant_block" frames="0" delay="0.08"/>
+                  <Anim id="hurt"  path="giant_block" frames="8-12" delay="0.08" goto="idle"/>
+                  <Anim id="hit" path="giant_block" frames="0-5" delay="0.08"/>
+                  <Loop id="right" path="giant_block" frames="6,7"  delay="0.08"/>
+                */
+                face.AddLoop("idle", "giant_block", 0.08f, 0);
+                face.Add("hurt", "giant_block", 0.08f, "idle", 8, 9, 10, 11, 12);
+                face.Add("hit", "giant_block", 0.08f, 0, 1, 2, 3, 4, 5);
+                face.AddLoop("right", "giant_block", 0.08f, 6, 7);
+            } else {
+                /*
+                  <Loop id="idle" path="idle_face" delay="0.08"/>
+                  <Anim id="hurt" path="hurt" frames="3-12" delay="0.08" goto="idle"/>
+                  <Anim id="hit" path="hit" delay="0.08"/>
+                  <Loop id="left" path="hit_left" delay="0.08"/>
+                  <Loop id="right" path="hit_right" delay="0.08"/>
+                  <Loop id="up" path="hit_up" delay="0.08"/>
+                  <Loop id="down" path="hit_down" delay="0.08"/>
+                */
+
+                face.AddLoop("idle", "idle_face", 0.08f);
+                face.Add("hurt", "hurt", 0.08f, "idle", 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+                face.Add("hit", "hit", 0.08f);
+                face.AddLoop("left", "hit_left", 0.08f);
+                face.AddLoop("right", "hit_right", 0.08f);
+                face.AddLoop("up", "hit_up", 0.08f);
+                face.AddLoop("down", "hit_down", 0.08f);
             }
-            else
-            {
-                Add(this.face = GFX.SpriteBank.Create("NoReturnSokoban_face"));
-            }
-            this.face.Position = new Vector2(Width, Height) / 2f;
-            this.face.Play("idle", false, false);
-            this.face.OnLastFrame = delegate (string f)
-            {
+            face.CenterOrigin();
+            face.Play("idle");
+            this.face.OnLastFrame = delegate (string f) {
                 bool flag = f == "hit";
-                if (flag)
-                {
+                if (flag) {
                     this.face.Play(this.nextFaceDirection, false, false);
                 }
             };
@@ -72,23 +114,17 @@ namespace Celeste.Mod.CherryHelper
             this.AddImage(idle, num, 0, 3, 0, 1, -1);
             this.AddImage(idle, 0, num2, 0, 3, -1, 1);
             this.AddImage(idle, num, num2, 3, 3, 1, 1);
-            for (int i = 1; i < num; i++)
-            {
+            for (int i = 1; i < num; i++) {
                 this.AddImage(idle, i, 0, Calc.Random.Choose(1, 2), 0, 0, -1);
                 this.AddImage(idle, i, num2, Calc.Random.Choose(1, 2), 3, 0, 1);
             }
-            for (int j = 1; j < num2; j++)
-            {
+            for (int j = 1; j < num2; j++) {
                 this.AddImage(idle, 0, j, 0, Calc.Random.Choose(1, 2), -1, 0);
                 this.AddImage(idle, num, j, 3, Calc.Random.Choose(1, 2), 1, 0);
             }
             Add(new LightOcclude(0.2f));
             Add(this.returnLoopSfx = new SoundSource());
             Add(new WaterInteraction(() => this.crushDir != Vector2.Zero));
-        }
-
-        public NonReturnSokoban(EntityData data, Vector2 offset) : this(data.Position + offset, (float)data.Width, (float)data.Height, data.Enum<NonReturnSokoban.Axes>("axes", Axes.Both), data.Bool("chillout", false), data.Bool("altTexture", false))
-        {
         }
 
         public override void Added(Scene scene)
@@ -191,7 +227,7 @@ namespace Celeste.Mod.CherryHelper
                 bool flag4 = borderX < 0;
                 if (flag4)
                 {
-                    Image image2 = new Image(GFX.Game[altTextureString + "lit_left"].GetSubtexture(0, ty * 8, 8, 8, null));
+                    Image image2 = new Image(GFX.Game[spriteDirectory + "/lit_left"].GetSubtexture(0, ty * 8, 8, 8, null));
                     this.activeLeftImages.Add(image2);
                     image2.Position = vector;
                     image2.Visible = false;
@@ -202,7 +238,7 @@ namespace Celeste.Mod.CherryHelper
                     bool flag5 = borderX > 0;
                     if (flag5)
                     {
-                        Image image3 = new Image(GFX.Game[altTextureString + "lit_right"].GetSubtexture(0, ty * 8, 8, 8, null));
+                        Image image3 = new Image(GFX.Game[spriteDirectory + "/lit_right"].GetSubtexture(0, ty * 8, 8, 8, null));
                         this.activeRightImages.Add(image3);
                         image3.Position = vector;
                         image3.Visible = false;
@@ -212,7 +248,7 @@ namespace Celeste.Mod.CherryHelper
                 bool flag6 = borderY < 0;
                 if (flag6)
                 {
-                    Image image4 = new Image(GFX.Game[altTextureString + "lit_top"].GetSubtexture(tx * 8, 0, 8, 8, null));
+                    Image image4 = new Image(GFX.Game[spriteDirectory + "/lit_top"].GetSubtexture(tx * 8, 0, 8, 8, null));
                     this.activeTopImages.Add(image4);
                     image4.Position = vector;
                     image4.Visible = false;
@@ -223,7 +259,7 @@ namespace Celeste.Mod.CherryHelper
                     bool flag7 = borderY > 0;
                     if (flag7)
                     {
-                        Image image5 = new Image(GFX.Game[altTextureString + "lit_bottom"].GetSubtexture(tx * 8, 0, 8, 8, null));
+                        Image image5 = new Image(GFX.Game[spriteDirectory + "/lit_bottom"].GetSubtexture(tx * 8, 0, 8, 8, null));
                         this.activeBottomImages.Add(image5);
                         image5.Position = vector;
                         image5.Visible = false;
@@ -431,7 +467,7 @@ namespace Celeste.Mod.CherryHelper
                 }
             }
             num += 2;
-            this.level.Particles.Emit(CrushBlock.P_Activate, num, position, positionRange, direction);
+            this.level.Particles.Emit(P_Activate, num, position, positionRange, direction);
         }
 
         private IEnumerator AttackSequence()
@@ -647,7 +683,7 @@ namespace Celeste.Mod.CherryHelper
             }, Alarm.AlarmMode.Oneshot);
             this.crushDir = Vector2.Zero;
             this.TurnOffImages();
-            this.face.Play("hurt", false, false);
+            yield return this.face.PlayRoutine("hurt", false);
             this.face.Play("idle", false, false);
             yield break;
         }
@@ -767,8 +803,8 @@ namespace Celeste.Mod.CherryHelper
 
         // Token: 0x040007F0 RID: 2032
         public Color fill;
+        public Axes axes;
         private bool altTexture;
-        public string altTextureString;
 
         // Token: 0x040007F1 RID: 2033
         private Level level;

@@ -19,9 +19,6 @@ uincrbKevin.fieldInformation = {
         options = axisOptions,
         editable = false
     },
-    texturePath = {
-        fieldType = "string",
-    },
     crushParticleColor1 = {
         fieldType = "color"
     },
@@ -41,24 +38,7 @@ uincrbKevin.fieldInformation = {
 
 uincrbKevin.ignoredFields = { "_name", "_id", "originX", "originY", "reskinnable" }
 
-uincrbKevin.placements = {
-    {
-        name = "reskinnable",
-        data = {
-            reskinnable = true,
-            width = 24,
-            height = 24,
-            axes = axisOptions.Both,
-            chillout = false,
-            spriteDirectory = "objects/uninterruptedNRK",
-            crushParticleColor1 = "ff66e2",
-            crushParticleColor2 = "68fcff",
-            activateParticleColor1 = "5fcde4",
-            activateParticleColor2 = "ffffff",
-            fillColor = "242262",
-        }
-    }
-}
+uincrbKevin.placements = { }
 
 for _, axis in pairs(axisOptions) do
     table.insert(uincrbKevin.placements, {
@@ -75,13 +55,19 @@ end
 
 for _, axis in pairs(axisOptions) do
     table.insert(uincrbKevin.placements, {
-        name = "alt" .. axis,
+        name = "reskinnable" .. axis,
         data = {
+            reskinnable = true,
             width = 24,
             height = 24,
             axes = axis,
-            altTexture = true,
-            chillout = false
+            chillout = false,
+            spriteDirectory = "objects/uninterruptedNRK",
+            crushParticleColor1 = "ff66e2",
+            crushParticleColor2 = "68fcff",
+            activateParticleColor1 = "5fcde4",
+            activateParticleColor2 = "ffffff",
+            fillColor = "242262",
         }
     })
 end

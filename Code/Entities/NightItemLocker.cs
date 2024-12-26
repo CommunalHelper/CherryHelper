@@ -1,4 +1,5 @@
 ﻿//using System.Reflection;
+using Celeste.Mod.Core;
 using Celeste.Mod.Entities;
 using Celeste.Mod.Helpers;
 using Microsoft.Xna.Framework;
@@ -9,13 +10,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-
-
 namespace Celeste.Mod.CherryHelper
-{
-
-    
-
+{     
     [CustomEntity("CherryHelper/NightItemLockfield")]
     [Tracked(true)]
     public class EntityToggleField : Entity
@@ -36,8 +32,6 @@ namespace Celeste.Mod.CherryHelper
         : base(position)
         {
             base.Collider = new Hitbox(width, height);
-
-
         }
 
         public EntityToggleField(EntityData data, Vector2 offset)
@@ -145,7 +139,7 @@ namespace Celeste.Mod.CherryHelper
             Level level = SceneAs<Level>();
             if (!firstTime && can)
             {
-                if (!Settings.Instance.DisableFlashes)
+                if (CoreModule.Settings.AllowGlitch)
                 {
                     Add(new Coroutine(FlickerBlackhole()));
                 }

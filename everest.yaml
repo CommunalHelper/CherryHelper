@@ -1,6 +1,6 @@
 - Name: CherryHelper
-  Version: 1.8.1
+  Version: 1.8.2
   DLL: Code/bin/CherryHelper.dll
   Dependencies:
     - Name: EverestCore
-      Version: 1.5184.0
+      Version: 1.5617.0

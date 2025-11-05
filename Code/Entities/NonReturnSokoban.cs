@@ -339,7 +339,7 @@ namespace Celeste.Mod.CherryHelper
 
         public void Attack(Vector2 direction)
         {
-            Audio.Play("event:/game/06_reflection/Sokoban_activate", Center);
+            Audio.Play("event:/game/06_reflection/crushblock_activate", Center);
             bool flag = this.currentMoveLoopSfx != null;
             if (flag)
             {
@@ -352,7 +352,7 @@ namespace Celeste.Mod.CherryHelper
             }
             Add(this.currentMoveLoopSfx = new SoundSource());
             this.currentMoveLoopSfx.Position = new Vector2(Width, Height) / 2f;
-            this.currentMoveLoopSfx.Play("event:/game/06_reflection/Sokoban_move_loop", null, 0f);
+            this.currentMoveLoopSfx.Play("event:/game/06_reflection/crushblock_move_loop", null, 0f);
             this.face.Play("hit", false, false);
             this.crushDir = direction;
             this.canActivate = false;
@@ -669,7 +669,7 @@ namespace Celeste.Mod.CherryHelper
                     }
                 }
             }
-            Audio.Play("event:/game/06_reflection/Sokoban_impact", this.Center);
+            Audio.Play("event:/game/06_reflection/crushblock_impact", this.Center);
             this.level.DirectionalShake(this.crushDir, 0.3f);
             Input.Rumble(RumbleStrength.Medium, RumbleLength.Medium);
             this.StartShaking(0.4f);
